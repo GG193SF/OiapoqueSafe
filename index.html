@@ -1,11 +1,12 @@
 <!DOCTYPE html> 
+
 <html lang="pt-BR"> 
 
 <head> 
 
     <meta charset="UTF-8"> 
 
-    <meta name="viewport" content="width=device-width, inital-scale=1.0"> 
+    <meta name="viewport"content="width=device-width,initial-scale=1.0"> 
 
     <title>OiapoqueSafe</title>
 
@@ -15,72 +16,121 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background: #f4f7f8;
-            color: #173b57;
+            color: # 173b57;
         } 
 
-        header h1 { 
+        header { 
             background: white;
-            padding: 20px 40px; 
-            border-bottom: 3px splid #21966b;
+            padding: 20px 40px;
+            border-bottom: 3px solid #21966b;
         } 
 
         header h1 { 
-            margin: 0;
+            margin> 0;
             color: #123b63;
-        } 
+        }
 
         header p { 
             margin: 5px 0 0;
-            color: #21966b; 
-        } 
+            color: #21966b;
+        }
 
         .menu { 
             background: #123b63;
-            padding: 15px 40px; 
+            padding: 15px 40px;
         } 
 
         .menu a { 
             color: white;
             text-decoration: none;
-            margin-right: 30px;
-            font-weight: bold;
+            margin-rigth 30px;
+            font-weight: blod;
+            cursor: pointer;
+        } 
+
+        .menu a:hover { 
+            color: #55d6a0;
         } 
 
         main { 
             padding: 40px;
-        } 
+        }
 
         .titulo { 
-            margin-bottom: 30px;
+            margin-bottom:30px;
         } 
 
-        .cards { 
-            dispaly: flex;
+        .cards {
+            display: flex;
             gap: 20px;
             flex-wrap: wrap;
-        } 
+        }
 
         .card { 
             background: white;
             width: 200px;
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 3px 10px;
-#00000015;
-        }
+            box-shadow: 0 3px 10px #00000015;
+        } 
 
         .card h3 { 
             margin-top: 0;
             color: #123b63;
         } 
 
-        .numero { 
+        .numero {
             font-size: 32px;
-            font-weight: bold;
+            font-weight: blod;
             color: #21966b;
+        } 
+        
+        .pagina {
+            display: none;
+        }
+
+        .pagina.ativa {
+            display: block;
+        }
+
+        .camera-grid {
+            dispaly: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 20px;
+        } 
+
+        .camera { 
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 3px 10px #00000015;
+        } 
+            
+        .camera-tela { 
+            height: 150px;
+            background: # 123b63;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white
+            font-size: 18px;
+            margin-bottom: 15px;
+        } 
+
+        .voltar { 
+            display: inline-block; 
+            margin-top: 25px;
+            padding: 10px 18px;
+            background: #21966b;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: blod;
         } 
 
     </style> 
+
 
 </head> 
 
@@ -89,93 +139,211 @@
     <header> 
 
         <h1>OiapoqueSafe</h1>
-        
-        <p>Central de Segurança Inteligente</p> 
 
-    </header> 
+        <p>Central de Segurança Inteligente</p>
+
+    <header> 
 
 
     <nav class="menu"> 
 
-        <a href="#">Início</a> 
+        <a onclick="mostrarPagina('inicio')">Início</a> 
 
-        <a href="#">Câmeras</a>
+        <a onclick="mostrarPagina('cameras')">Câmeras</a> 
 
-        <a href="#">Mapa</a>
+        <a onclick="mostrarPagina('mapa')">Mapa</a> 
 
-        <a href="#">Ocorrências</a> 
+        <a onclick="mostrarPagina('ocorrencias')">Ocorrências</a>
 
-        <a href="#">Relatórios</a>
+        <a onclick="mostrarPagina('relatorios')">Relatórios</a> 
 
     </nav> 
 
-
     <main> 
 
-        <div class="titulo">
+        <section id="inicio" class="pagina ativa"> 
 
-            <h2>Painel de Monitoramento</h2>
+            <div class="titulo"> 
 
-            <p> 
-                Acompanhe as informações de segurança da cidade. 
-            </p> 
+                <h2>Painel de Monitoramento</h2>
+
+                <p>Acompanhe as informações de segurança da cidade.</p>
+
+            </div> 
+
+            <div class="cards"> 
+
+                <div class="card"> 
+
+                    <h3>Câmeras</h3> 
+
+                    <div class="numero">24</div>
+
+                    <p>Câmeras conectadas</p>
+
+                </div> 
+
+                <div class="card"> 
+
+                    <h3>Ativas</h3>
+
+                    <div class="numero">21</div>
+
+                    <p>Câmeras funcionando</p> 
+
+                </div> 
+
+                <div class="card"> 
+
+                    <h3>Ocorrência</h3>
+
+                    <div class-"numero">03</div> 
+
+                    <p>Registradas hoje</p>
+                    
+                </div>
+
+                <div class="card"> 
+
+                    <h3>Status</h3>
+
+                    <div class="numero">OK</div> 
+
+                    <p>Sistema operacional</p>
+
+                </div> 
+
+            </div> 
+
+        </section>
+
+        <section id="cameras" class="pagina"> 
+
+            <div class="titulo">
+
+                <h2>📹 Monitoramento de Câmeras</h2>
+
+                <p>Visualização das câmeras conectadas à Central OiapoqueSafe</p>
+
+            </div> 
+
+            < div class="camera-grid"> 
+
+                <div class="camera"> 
+
+                    <div class="camera-tela">
+                        📹Câmera 01
+                    </div> 
+
+                    <h3>Câmera 01</h3>
+
+                    <p class="online">• Online</p> 
+
+                    <p>Localização: Centro</p>
+
+                </div> 
+
+                <div class="camera"> 
+
+                    <div class="camera-tela">
+                        📹Câmera 02
+                    </div>
+
+                    <h3>Câmera 02</h3>
+
+                    <p class="online">• Online</p> 
+
+                    <p>Localização: Avenida Principal</p>
+
+                </div> 
+
+                <div class="camera"> 
+
+                    <div class="camera-tela">
+                        📹Câmera 03
+                    </div>
+
+                    <h3>Câmera 03</h3>
+
+                    <p class="online">• Online</p> 
+
+                    <p>Localização: Praça Central</p>
+
+                </div> 
+
+                <div class="camera-tela">
+                    📹Câmera 04
+                </div> 
+
+                <h3>Câmera 04</h3>
+
+                <p class="online">• Online</p>
+
+                <p>Localização: Entrada da cidade</p>
+
+            </div> 
 
         </div> 
 
+        <div 
+            class="voltar"
+            onclick="mostrarPagina('inicio')">
+            ← Voltar ao painel
+        </div>
 
-        <div class="cards"> 
+    </section>
 
-            <div class="card"> 
+    <section id="mapa" class="pagina">
 
-                <h3>Câmeras</h3>
+        <h2> 🗺️ Mapa de Monitoramento</h2>
 
-                <div class="numero">24</div> 
+        <p>Área destinada ao mapa com a localização das câmeras.</p>
 
-                <p>Câmeras conectadas</p> 
+        <div class="voltar" onclick="mostrarPagina('iniciar')">
+            ← Voltar ao painel 
+        </div>
 
-            </div> 
+    </section>
 
+    <section id="ocorrencias" class="pagina"> 
 
-            <div class="card"> 
+        <h2>🚨 Ocorrências</h2>
 
-                <h3>Ativas</h3>
+        <p> Área destinada ao registro e acompanhaamento de ocorrências.</p>
 
-                <div class="numero">21</div> 
+        <div class="voltar" onclick="mostrarPagina('inicio')">
+            ← Voltar ao painel
+        </div>
 
-                <p>Câmeras funcionando</p> 
+    </section>
 
-            </div> 
+        <section id="relatorios" class="pagina">
 
+            <h2>📊 Relatórios</h2>
 
-            <div class="card"> 
+            <p> Área destinada aos relatórios de segurança.</p>
 
-                <h3>Ocorrências</h3>
-
-                <div class="numero">03</div> 
-
-                <p>Registradas hoje</p>
-
-            </div> 
-
-            <div class="card"> 
-
-                <h3>Status</h3>
-
-                <div class="numero">OK</div>
-
-                <p>Sistema operacional</p>
-
+            <div class="voltar" onclick="mostrarPagina('inicio')">
+                ← Voltar ao painel
             </div>
 
-        </div>
+        </section>
 
     </main>
 
-</body>
+        <script> 
 
-</html> 
-        
+            function mostrarPagina(pagina) {
+                const paginas = document.querySelectorA11('.pagina');
+                paginas.forEach(funtion(item) { 
+                    item.classList.remove('ativa');
+                });
 
-            
-            
-                
+                document.getElementById(pagina).classList.add('ativa');
+            }
+
+        </script> 
+
+    </body> 
+
+    </html>           
