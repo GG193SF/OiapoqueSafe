@@ -1,5 +1,4 @@
 <!DOCTYPE html> 
-
 <html lang="pt-BR"> 
 
 <head> 
@@ -40,15 +39,16 @@
             padding: 15px 40px;
         } 
 
-        .menu a { 
+        .menu button { 
+            background: none;
+            border: none;
             color: white;
-            text-decoration: none;
-            margin-rigth 30px;
             font-weight: blod;
+            margin-rigth:25px;
             cursor: pointer;
         } 
 
-        .menu a:hover { 
+        .menu button:hover { 
             color: #55d6a0;
         } 
 
@@ -56,9 +56,13 @@
             padding: 40px;
         }
 
-        .titulo { 
-            margin-bottom:30px;
-        } 
+        .pagina {
+            display: none;
+        }
+
+        .pagina.ativa {
+            display: block;
+        }
 
         .cards {
             display: flex;
@@ -75,7 +79,6 @@
         } 
 
         .card h3 { 
-            margin-top: 0;
             color: #123b63;
         } 
 
@@ -84,25 +87,18 @@
             font-weight: blod;
             color: #21966b;
         } 
-        
-        .pagina {
-            display: none;
-        }
-
-        .pagina.ativa {
-            display: block;
-        }
 
         .camera-grid {
-            dispaly: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            dispaly: flex;
             gap: 20px;
-        } 
+            flex-wrap: wrap;
+        }
 
         .camera { 
             background: white;
-            border-radius: 12px;
+            width: 250px;
             padding: 20px;
+            border-radius: 12px;
             box-shadow: 0 3px 10px #00000015;
         } 
             
@@ -115,22 +111,14 @@
             justify-content: center;
             color: white
             font-size: 18px;
-            margin-bottom: 15px;
         } 
 
-        .voltar { 
-            display: inline-block; 
-            margin-top: 25px;
-            padding: 10px 18px;
-            background: #21966b;
-            color: white;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: blod;
+        .online {
+            color: #21966b;
+            font-weigth: bold;
         } 
 
     </style> 
-
 
 </head> 
 
@@ -147,15 +135,15 @@
 
     <nav class="menu"> 
 
-        <a onclick="mostrarPagina('inicio')">Início</a> 
+        <button onclick="mostrarPagina('inicio')">Início</button> 
 
-        <a onclick="mostrarPagina('cameras')">Câmeras</a> 
+        <button onclick="mostrarPagina('cameras')">Câmeras</button>
 
-        <a onclick="mostrarPagina('mapa')">Mapa</a> 
+        <button onclick="mostrarPagina('mapa')">Mapa</button> 
 
-        <a onclick="mostrarPagina('ocorrencias')">Ocorrências</a>
+        <button onclick="mostrarPagina('ocorrencias')">Ocorrências</button>
 
-        <a onclick="mostrarPagina('relatorios')">Relatórios</a> 
+        <button onclick="mostrarPagina('relatorios')">Relatórios</button>
 
     </nav> 
 
@@ -168,8 +156,6 @@
                 <h2>Painel de Monitoramento</h2>
 
                 <p>Acompanhe as informações de segurança da cidade.</p>
-
-            </div> 
 
             <div class="cards"> 
 
@@ -334,9 +320,9 @@
         <script> 
 
             function mostrarPagina(pagina) {
-                const paginas = document.querySelectorA11('.pagina');
-                paginas.forEach(funtion(item) { 
-                    item.classList.remove('ativa');
+                var paginas = document.querySelectorA11('.pagina');
+                paginas.forEach(funtion(pagina) { 
+                    item.classList.remove("ativa");
                 });
 
                 document.getElementById(pagina).classList.add('ativa');
