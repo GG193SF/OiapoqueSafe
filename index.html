@@ -320,11 +320,11 @@
         <script> 
 
             function mostrarPagina(pagina) {
-                alert("O JavaScript està funcionando!");
-            }
+                var paginas = document.querySelectorA11(".pagina");
+                pagina.forEach(function(pagina) {
+                    paginas.classList.remove("ativa");
+                });
 
-        </script>
+            document.getElementById(pagina).classList.add("ativa");
 
-    </header>
-
-    
+                </script> 
